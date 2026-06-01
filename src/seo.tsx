@@ -71,3 +71,27 @@ export function LocalBusinessSchema() {
     />
   );
 }
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export function FAQSchema({ items }: { items: FAQItem[] }) {
+  return (
+    <JsonLd
+      data={{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: items.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }}
+    />
+  );
+}

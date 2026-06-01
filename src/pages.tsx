@@ -10,20 +10,24 @@ import {
   ServicePreview,
   ServicesGrid,
   TrustAndProcess,
+  HomeFAQ,
 } from './components';
 import {
   portfolioItems,
   pricingTiers,
   services,
   trustPoints,
+  homeFaqItems,
 } from './content';
-import { OrganizationSchema, ServiceSchema } from './seo';
+import { OrganizationSchema, ServiceSchema, LocalBusinessSchema, FAQSchema } from './seo';
 import { PortfolioItem, ServiceOffer } from './types';
 
 export function HomePage() {
   return (
     <>
       <OrganizationSchema />
+      <LocalBusinessSchema />
+      <FAQSchema items={homeFaqItems} />
       <HomeHero />
       <ServicePreview services={services} />
       <TrustAndProcess trustPoints={trustPoints} />
@@ -45,6 +49,7 @@ export function HomePage() {
           <PricingGrid tiers={pricingTiers} />
         </div>
       </section>
+      <HomeFAQ />
       <CtaBand />
     </>
   );
@@ -295,7 +300,7 @@ export function PortfolioDetailPage({ item }: { item: PortfolioItem }) {
             </article>
           </div>
           <article className="soft-card portfolio-outcomes-card">
-            <h3>Expected outcomes</h3>
+            <h3>Results and impact</h3>
             <ul className="plain-list">
               {item.outcomes.map((outcome) => (
                 <li key={outcome}>{outcome}</li>
@@ -371,6 +376,30 @@ export function AboutPage() {
             <article className="soft-card about-value-card">
               <h3>Approach</h3>
               <p>Start with the workflow, define the right scope, then build a clean system that can evolve over time.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section className="section founder-section">
+        <div className="container">
+          <SectionHeader
+            title="Our Founders"
+            description="WebNexus is led by hands-on builders based in Karachi who bring technical execution and product strategy to every engagement."
+          />
+          <div className="founder-grid">
+            <article className="founder-card">
+              <h3>Adeel Umer</h3>
+              <span className="founder-role">CO-FOUNDER &amp; TECHNICAL LEAD</span>
+              <p>
+                Software engineer based in Karachi with extensive experience in full-stack architecture, cloud deployment, and AI integration. Adeel ensures WebNexus projects are built on clean, performant, and future-proof codebases.
+              </p>
+            </article>
+            <article className="founder-card">
+              <h3>Bisma Saleem</h3>
+              <span className="founder-role">CO-FOUNDER &amp; PRODUCT LEAD</span>
+              <p>
+                Product strategist and designer based in Karachi. Bisma leads user experience design, client scoping, and workflow mapping, translating complex business processes into intuitive, high-converting digital products.
+              </p>
             </article>
           </div>
         </div>

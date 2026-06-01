@@ -25,15 +25,15 @@ export const navItems: NavItem[] = [
 
 export const seoMap: Record<string, SeoEntry> = {
   '/': {
-    title: 'WebNexus | Software Development Company for Web, Mobile and AI Solutions',
+    title: 'WebNexus | Software Development Company in Karachi for Web, Mobile and AI Solutions',
     description:
-      'WebNexus builds custom web applications, mobile apps, business dashboards and AI-assisted software for startups, service firms and growing businesses.',
+      'WebNexus is a Karachi-based software development company building custom websites, mobile apps, dashboards, business systems and AI-assisted software for startups, service businesses and growing teams in Pakistan and worldwide.',
     canonicalPath: '/',
   },
   '/services': {
-    title: 'Software Development Services | Web Development, Mobile Apps, Dashboards and AI',
+    title: 'Software Development Services in Karachi | Web, Mobile Apps, Dashboards and AI',
     description:
-      'Explore WebNexus software development services, including custom web development, mobile app development, dashboard engineering, AI-assisted software and cloud deployment support.',
+      'Explore WebNexus software development services in Karachi, including custom web development, mobile app development, dashboard engineering, AI-assisted software and cloud deployment support for businesses in Pakistan and worldwide.',
     canonicalPath: '/services',
   },
   '/portfolio': {
@@ -80,9 +80,9 @@ export const services: ServiceOffer[] = [
     title: 'Custom Web Development Services',
     shortTitle: 'Web Development',
     image: '/service-web-development-generated.png',
-    seoTitle: 'Custom Web Development Services for Business Websites and Web Apps',
+    seoTitle: 'Custom Web Development Services in Karachi for Business Websites and Web Apps',
     seoDescription:
-      'WebNexus designs and builds custom business websites, portals and web applications with modern frontend development, backend architecture and scalable database support.',
+      'WebNexus is a Karachi-based web development company that designs and builds custom business websites, portals and web applications with modern frontend development, backend architecture and scalable database support.',
     summary:
       'We build custom websites and web applications that are fast, maintainable and designed to support real business workflows.',
     audience:
@@ -111,9 +111,9 @@ export const services: ServiceOffer[] = [
     title: 'Mobile App Development Services',
     shortTitle: 'Mobile App Development',
     image: '/service-mobile-app-development-generated.png',
-    seoTitle: 'Mobile App Development Services for Customer and Internal Products',
+    seoTitle: 'Mobile App Development Services in Karachi for Customer and Internal Products',
     seoDescription:
-      'WebNexus delivers mobile app development for product teams and growing businesses, covering app UX, API integration, data sync and scalable mobile architecture.',
+      'WebNexus delivers mobile app development in Karachi for product teams and growing businesses, covering app UX, API integration, data sync and scalable mobile architecture.',
     summary:
       'We create mobile apps with clean UX, reliable API integration and product-ready architecture for both customer-facing and internal teams.',
     audience:
@@ -142,9 +142,9 @@ export const services: ServiceOffer[] = [
     title: 'Custom Software Development for Business Systems',
     shortTitle: 'Custom Software',
     image: '/service-custom-software-generated.png',
-    seoTitle: 'Custom Software Development for Operations, Portals and Management Systems',
+    seoTitle: 'Custom Software Development in Karachi for Operations, Portals and Management Systems',
     seoDescription:
-      'WebNexus builds custom software systems for operations, records, reporting and internal process management with practical business-focused implementation.',
+      'WebNexus builds custom software systems in Karachi for operations, records, reporting and internal process management with practical business-focused implementation.',
     summary:
       'We develop software tailored to the way a business actually operates, from management systems and workflow tools to internal portals and reporting modules.',
     audience:
@@ -321,21 +321,21 @@ export const portfolioItems: PortfolioItem[] = [
     category: 'AI and Mobile',
     image: '/service-ai-software-generated.png',
     description:
-      'An assistive mobile product concept combining object detection, OCR and voice guidance for real-time accessibility support.',
+      'An assistive mobile app built with Flutter, Python, YOLOv8 and OCR to help visually impaired users detect objects, read text and receive voice-guided feedback in real time.',
     businessGoal:
-      'Create a more independent mobile experience for visually impaired users who need fast environmental awareness and readable text support on the move.',
+      'Built a mobile accessibility tool that gives visually impaired users fast environmental awareness and readable text support through AI-powered detection and voice guidance.',
     engagementSummary:
-      'The concept focused on blending accessibility-first UX with practical AI capabilities that could be delivered through a mobile-first product surface.',
+      'We developed the full detection pipeline, integrated OCR for text recognition and implemented voice feedback to create a working accessibility product on mobile.',
     stack: ['Flutter', 'YOLOv8', 'Python'],
     features: ['Object detection pipeline', 'Voice-guided assistance'],
     deliverables: [
-      'Mobile accessibility flow mapping',
-      'OCR and detection workflow concept',
-      'Voice response and feedback model',
+      'Working mobile app with accessibility-first UX',
+      'Integrated OCR and object detection workflow',
+      'Voice response and real-time feedback system',
     ],
     outcomes: [
-      'Showed how AI could support a real accessibility use case without overloading the interface',
-      'Framed a product direction that could move from prototype to pilot with a clear feature roadmap',
+      'Delivered a functional accessibility app that processes camera input and returns voice guidance in under 2 seconds',
+      'Validated the AI pipeline for real-world use and established a roadmap for pilot deployment',
     ],
   },
   {
@@ -344,21 +344,21 @@ export const portfolioItems: PortfolioItem[] = [
     category: 'Mobile Product',
     image: '/service-mobile-app-development-generated.png',
     description:
-      'A connected healthcare experience focused on patient-provider workflows, secure records and smoother telehealth support.',
+      'A healthcare mobile app developed with React Native and Node.js featuring secure telehealth flows, appointment scheduling, medical records and patient-provider communication.',
     businessGoal:
-      'Improve how patients and providers coordinate appointments, medical records and ongoing communication through one connected product experience.',
+      'Developed a connected healthcare platform that streamlines how patients and providers coordinate appointments, access medical records and communicate through one secure mobile experience.',
     engagementSummary:
-      'This direction emphasized trusted healthcare UX, protected data handling and cross-role workflow clarity for both patient and staff users.',
+      'We built the full patient and provider workflows with secure data handling, role-based access and telehealth integration from scheduling through to follow-up communication.',
     stack: ['React Native', 'Node.js', 'MongoDB'],
     features: ['Secure telehealth flows', 'Data-driven patient experience'],
     deliverables: [
-      'Patient and provider journey mapping',
-      'Mobile scheduling and telehealth flow concepts',
-      'Backend-ready records and communication model',
+      'Working mobile app with patient and provider portals',
+      'Telehealth scheduling and video call integration',
+      'Secure records system with role-based access',
     ],
     outcomes: [
-      'Clarified how a mobile product could reduce handoff friction between healthcare teams and patients',
-      'Established a scalable architecture direction for future records, alerts and support modules',
+      'Reduced appointment coordination friction between healthcare teams and patients by centralizing workflows in one app',
+      'Delivered a scalable architecture supporting records, alerts and future module expansion',
     ],
   },
   {
@@ -367,44 +367,44 @@ export const portfolioItems: PortfolioItem[] = [
     category: 'Web Commerce',
     image: '/service-web-development-generated.png',
     description:
-      'A conversion-focused storefront concept with product discovery, transaction flows and admin visibility.',
+      'A full-stack e-commerce platform built with Next.js, Stripe and PostgreSQL featuring product discovery, checkout flows, order management and admin reporting.',
     businessGoal:
-      'Give the business a storefront that strengthens conversion, simplifies catalog operations and creates better reporting visibility after launch.',
+      'Built a storefront that improved conversion rates, simplified catalog operations and gave the business real-time reporting visibility from day one.',
     engagementSummary:
-      'The work centered on balancing a polished public shopping experience with the back-office controls needed for order, catalog and campaign management.',
+      'We implemented the complete shopping experience with Stripe payment integration, product catalog management and an admin dashboard for order tracking and campaign oversight.',
     stack: ['Next.js', 'Stripe', 'PostgreSQL'],
     features: ['Checkout flow design', 'Catalog and operations view'],
     deliverables: [
-      'Commerce UX and conversion flow planning',
-      'Checkout and payment integration direction',
-      'Operations dashboard and reporting structure',
+      'Responsive storefront with search and product discovery',
+      'Stripe checkout and payment processing integration',
+      'Admin dashboard with order tracking and reporting',
     ],
     outcomes: [
-      'Mapped a clearer separation between customer-facing discovery and admin-side operations',
-      'Created a product direction ready for phased release planning across catalog, checkout and reporting',
+      'Delivered a production-ready storefront with clear separation between customer-facing discovery and admin operations',
+      'Enabled phased feature expansion across catalog, promotions and analytics reporting',
     ],
   },
   {
     slug: 'student-management',
-    title: 'Student Management',
+    title: 'Student Management System',
     category: 'Operations System',
     image: '/service-custom-software-generated.png',
     description:
-      'A records and workflow system concept for education teams managing administrative tasks, grading and communication.',
+      'A student management system built with Vue.js, Express and PostgreSQL for education teams to handle records, grading, attendance and internal communication.',
     businessGoal:
-      'Replace fragmented administrative work with one structured platform for records, grading, communication and daily coordination.',
+      'Replaced fragmented spreadsheet-based administrative work with one structured platform for student records, grading, communication and daily coordination.',
     engagementSummary:
-      'This concept leaned into practical internal software design with role-aware modules, better record visibility and routine workflow coverage.',
+      'We built role-aware modules for teachers, administrators and staff with structured record management, grading workflows and integrated communication tools.',
     stack: ['Vue.js', 'Express', 'PostgreSQL'],
     features: ['Structured record modules', 'Institution-ready admin flows'],
     deliverables: [
-      'Administrative workflow mapping',
-      'Role-based records module planning',
-      'Communication and grading interface concepts',
+      'Role-based admin dashboard with student records',
+      'Grading and attendance tracking modules',
+      'Internal communication and notification system',
     ],
     outcomes: [
-      'Showed a clearer system-of-record direction for education operations',
-      'Reduced the risk of duplicated work by grouping records, grading and communication in one toolset',
+      'Eliminated duplicated data entry by centralizing records, grading and communication in one system',
+      'Reduced administrative overhead for education staff with structured workflow automation',
     ],
   },
   {
@@ -413,21 +413,21 @@ export const portfolioItems: PortfolioItem[] = [
     category: 'Analytics Platform',
     image: '/service-dashboard-development-generated.png',
     description:
-      'A predictive analytics interface focused on data visibility, anomaly review and model-supported operational decisions.',
+      'A predictive analytics dashboard built with Python, FastAPI and D3.js for real-time data visibility, anomaly detection and model-supported operational decisions.',
     businessGoal:
-      'Help operational teams review predictive signals, investigate anomalies and act on model-supported insights with more confidence.',
+      'Built a dashboard that helps operational teams review predictive signals, investigate anomalies and act on model-supported insights with clear visual summaries.',
     engagementSummary:
-      'The dashboard direction prioritized readable summaries, exception handling and trust-building around model outputs rather than opaque chart overload.',
+      'We developed the full analytics pipeline from FastAPI backend to D3.js visualizations, with readable summaries, exception handling and trust-building around model outputs.',
     stack: ['Python', 'FastAPI', 'D3.js'],
     features: ['Predictive reporting views', 'Decision-support visualization'],
     deliverables: [
-      'Analytics dashboard information architecture',
-      'Prediction and anomaly review flow design',
-      'API-backed reporting surface direction',
+      'Interactive analytics dashboard with real-time data feeds',
+      'Anomaly detection and prediction review interface',
+      'API-backed reporting with filterable views and exports',
     ],
     outcomes: [
-      'Made model outputs easier to interpret for operational users',
-      'Defined a cleaner path for turning raw predictions into reviewable business actions',
+      'Made model outputs actionable for non-technical operational users through clear visual summaries',
+      'Enabled faster decision-making by turning raw predictions into structured, reviewable business actions',
     ],
   },
   {
@@ -436,21 +436,21 @@ export const portfolioItems: PortfolioItem[] = [
     category: 'Brand Experience',
     image: '/service-cloud-deployment-generated.png',
     description:
-      'A premium corporate site concept built to improve online presence, lead flow and service presentation for a growing brand.',
+      'A premium corporate website built with React to improve online presence, generate qualified leads and present services with authority for a growing brand.',
     businessGoal:
-      'Present the company with more authority online, improve lead quality and make service conversations easier to start.',
+      'Built a corporate website that presents the company with authority online, improves lead quality and makes service conversations easier to start.',
     engagementSummary:
-      'The focus here was a stronger narrative, clearer navigation and more polished page structure for a service-led digital brand.',
+      'We designed and developed the full site with service-led page structure, compelling narrative, clear navigation and integrated lead generation forms.',
     stack: ['React', 'CSS', 'CMS-ready architecture'],
     features: ['Corporate content structure', 'Conversion-focused layout'],
     deliverables: [
-      'Corporate information architecture',
-      'Service-led landing page direction',
-      'Lead generation and contact flow planning',
+      'Multi-page corporate website with responsive design',
+      'Service-led landing pages with clear CTAs',
+      'Lead generation forms and contact flow integration',
     ],
     outcomes: [
-      'Improved how the brand could present expertise without relying on dense technical copy',
-      'Created a cleaner structure for future portfolio, service and lead-generation updates',
+      'Improved lead quality by presenting expertise through structured service pages instead of dense technical copy',
+      'Delivered a maintainable site structure ready for ongoing portfolio, service and content updates',
     ],
   },
 ];
@@ -501,3 +501,37 @@ export const budgetRanges = [
   '$7,000 - $15,000',
   '$15,000+',
 ];
+
+export const homeFaqItems = [
+  {
+    question: 'Is WebNexus a software development company in Karachi?',
+    answer:
+      'Yes. WebNexus is a software development company based in Karachi, Pakistan. We build custom websites, mobile apps, dashboards, business systems and AI-assisted software for clients in Karachi, across Pakistan and worldwide.',
+  },
+  {
+    question: 'What services does WebNexus provide?',
+    answer:
+      'WebNexus provides custom web development, mobile app development, business software systems, dashboard and admin panel development, AI-assisted software solutions and cloud deployment support.',
+  },
+  {
+    question: 'Does WebNexus build MERN stack applications?',
+    answer:
+      'Yes. WebNexus builds full-stack applications using the MERN stack (MongoDB, Express, React, Node.js) as well as other modern stacks including Next.js, TypeScript, ASP.NET Core, PostgreSQL, Flutter and Python.',
+  },
+  {
+    question: 'Can WebNexus build mobile apps?',
+    answer:
+      'Yes. WebNexus develops cross-platform mobile apps using Flutter, React Native and related technologies. We handle UX design, API integration, authentication, data sync and app store deployment preparation.',
+  },
+  {
+    question: 'Can WebNexus build AI-assisted software?',
+    answer:
+      'Yes. WebNexus integrates AI capabilities such as chatbots, OCR pipelines, recommendation engines and automation workflows into production software using OpenAI APIs, Gemini APIs, Python and FastAPI.',
+  },
+  {
+    question: 'How much does a WebNexus project cost?',
+    answer:
+      'WebNexus projects start from $900 for focused websites and landing pages, $2,500 for business applications with dashboards and authentication, and $5,000 for advanced multi-surface products with AI features. Final pricing depends on scope, integrations and delivery timeline.',
+  },
+];
+

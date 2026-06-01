@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { ArrowRight, Check, ChevronRight, Cpu, Globe, Layers3, Menu, Smartphone, X } from 'lucide-react';
 import { FormEvent, ReactNode, useMemo, useState } from 'react';
@@ -11,6 +11,7 @@ import {
   processSteps,
   projectTypes,
   siteConfig,
+  homeFaqItems,
 } from './content';
 import { submitLead } from './leadService';
 import { LeadFormInput, PortfolioItem, PricingTier, ServiceOffer, TrustPoint } from './types';
@@ -98,7 +99,7 @@ export function Footer() {
             <span>WebNexus</span>
           </div>
           <p className="footer-copy">
-            The studio building custom software, mobile products, dashboards and AI-assisted experiences for growing teams.
+            A Karachi-based studio building custom software, mobile products, dashboards and AI-assisted experiences for growing teams in Pakistan and worldwide.
           </p>
         </div>
         <div>
@@ -159,10 +160,10 @@ export function HomeHero() {
     <section className="hero-section">
       <div className="container hero-grid">
         <div className="hero-copy">
-          <span className="eyebrow">Custom software studio for modern product teams</span>
-          <h1>Build Powerful Web, Mobile &amp; AI Solutions with WebNexus</h1>
+          <span className="eyebrow">Karachi-based software studio for modern product teams</span>
+          <h1>Software Development Company in Karachi for Web, Mobile &amp; AI Solutions</h1>
           <p>
-            We design and develop custom websites, mobile apps, business systems, dashboards and AI-assisted software that help teams launch, operate and scale with more confidence.
+            WebNexus is a Karachi-based software development company building custom websites, mobile apps, dashboards, business systems and AI-assisted software for startups, service businesses and growing teams in Pakistan and worldwide.
           </p>
           <div className="hero-actions">
             <Link href="/contact" className="button primary">
@@ -177,7 +178,7 @@ export function HomeHero() {
         <div className="hero-media-card">
           <Image
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqK0jSSIo4KmFWTxfiklAQHzXKqTWx9SataCW7L6o6v3ibO1wL_NV2cHGzkFggUHdPtEq5RdD0OWWM7dE3az18wYObDxeqnSSH5T_jKG_5VUFGzzCwUDTo2IrldRxKd8saQccgpNM3NSbR01bzTkE3J69e-mEXs8gnjrqmPGJauk_0m2xo6zM9BpLBk5ppuK4bgli7904idwiGqe5rsYJNkY3TsYRJCO5lmoUJvwkq2hhSeWfZIT399wh4VnojkoWl_VIAdWJUcKQ"
-            alt="WebNexus software development workspace"
+            alt="WebNexus software development workspace in Karachi"
             width={900}
             height={600}
             priority
@@ -573,3 +574,38 @@ function ContactForm() {
   );
 }
 
+export function HomeFAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <section className="section muted-section" id="faq">
+      <div className="container">
+        <SectionHeader
+          title="Frequently Asked Questions"
+          description="Common questions about working with WebNexus for your next software project."
+        />
+        <div className="faq-list">
+          {homeFaqItems.map((item, index) => (
+            <div
+              key={index}
+              className={`faq-item ${openIndex === index ? 'is-open' : ''}`}
+            >
+              <button
+                type="button"
+                className="faq-trigger"
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                aria-expanded={openIndex === index}
+              >
+                <span>{item.question}</span>
+                <ChevronRight size={16} className="faq-chevron" />
+              </button>
+              <div className="faq-answer">
+                <p>{item.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
