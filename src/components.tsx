@@ -478,11 +478,7 @@ function ContactForm() {
     try {
       const result = await submitLead(formData);
       setStatus('success');
-      setMessage(
-        result === 'email-client'
-          ? 'Your email app is opening with the project details prepared. Send the email there to complete your request.'
-          : 'Your request has been sent. We will review it and follow up with the right next step.'
-      );
+      setMessage(result.message || 'Your request has been sent. We will review it and follow up with the right next step.');
       setFormData({
         fullName: '',
         email: '',

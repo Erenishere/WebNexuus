@@ -59,19 +59,19 @@ application/
 As of 2026-05-25, the new `application/` build is no longer just a scaffold.
 
 - Completed:
-  - React + Vite app shell in `application/`
+  - Next.js App Router shell in `application/`
   - route-based navigation for home, services, service detail, portfolio, portfolio detail, about, pricing, contact, privacy, and terms
   - light-first visual system and shared header/footer structure
   - main page implementations for home, services, portfolio, about, pricing, and contact
   - portfolio detail pages wired from the grid instead of sending every project action to contact
   - legal/footer placeholder links replaced with real pages
-  - contact form prepared for real submission via `VITE_FORMSPREE_ENDPOINT`
+  - contact form posts through `/api/contact` and supports SMTP/Gmail app-password or `FORMSPREE_ENDPOINT`
   - build verification passing with `npm run build`
 
 - Remaining high-value polish:
   - replace or improve remaining remote image placeholders with local branded assets
   - refine corporate copy further where it still feels generic or overly broad
-  - decide whether the contact flow should stay Formspree-based or move to a custom backend/email handler
+  - configure production email delivery environment variables in Vercel
   - run responsive and visual QA against the reference screenshots
 
 ### Phase 1: Foundation
