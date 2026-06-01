@@ -90,16 +90,12 @@ select {
 }
 
 .brand-logo {
-  width: 28px;
-  height: 28px;
-  border-radius: 9px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--primary);
-  color: white;
-  font-size: 0.9rem;
-  font-weight: 800;
+  display: block;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border-radius: 10px;
+  box-shadow: 0 10px 18px rgba(37, 99, 235, 0.16);
 }
 
 .nav-desktop {

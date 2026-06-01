@@ -36,7 +36,7 @@ function Header() {
     <header className="site-header">
       <div className="container header-row">
         <Link href="/" className="brand-mark" onClick={closeMenu}>
-          <span className="brand-logo">W</span>
+          <Image src="/webnexus-logo.svg" alt="" width={34} height={34} className="brand-logo" aria-hidden="true" />
           <span>WebNexus</span>
         </Link>
         <nav className="nav-desktop" aria-label="Primary">
@@ -94,7 +94,7 @@ export function Footer() {
       <div className="container footer-grid">
         <div>
           <div className="brand-mark footer-brand">
-            <span className="brand-logo">W</span>
+            <Image src="/webnexus-logo.svg" alt="" width={34} height={34} className="brand-logo" aria-hidden="true" />
             <span>WebNexus</span>
           </div>
           <p className="footer-copy">
