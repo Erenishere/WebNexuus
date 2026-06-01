@@ -1,4 +1,5 @@
-import { Link, useLocation, useParams } from 'react-router-dom';
+import Link from 'next/link';
+import Image from 'next/image';
 import {
   CtaBand,
   HomeHero,
@@ -12,30 +13,16 @@ import {
 } from './components';
 import {
   portfolioItems,
-  portfolioSeoPaths,
   pricingTiers,
-  seoMap,
-  serviceSeoPaths,
   services,
   trustPoints,
 } from './content';
-import { OrganizationSchema, Seo } from './seo';
-
-function useSeo() {
-  const location = useLocation();
-  return (
-    seoMap[location.pathname] ||
-    serviceSeoPaths[location.pathname] ||
-    portfolioSeoPaths[location.pathname] ||
-    seoMap['/']
-  );
-}
+import { OrganizationSchema, ServiceSchema } from './seo';
+import { PortfolioItem, ServiceOffer } from './types';
 
 export function HomePage() {
-  const seo = useSeo();
   return (
     <>
-      <Seo {...seo} />
       <OrganizationSchema />
       <HomeHero />
       <ServicePreview services={services} />
@@ -64,10 +51,8 @@ export function HomePage() {
 }
 
 export function ServicesPage() {
-  const seo = useSeo();
   return (
     <>
-      <Seo {...seo} />
       <section className="section services-page-hero">
         <div className="container services-hero-layout">
           <div className="services-hero-copy">
@@ -77,10 +62,10 @@ export function ServicesPage() {
               We design and deliver business websites, internal systems, dashboards, mobile apps and AI-assisted workflows with practical structure and polished execution.
             </p>
             <div className="services-hero-actions">
-              <Link to="/contact" className="button primary">
+              <Link href="/contact" className="button primary">
                 Start Your Project
               </Link>
-              <Link to="/portfolio" className="button secondary">
+              <Link href="/portfolio" className="button secondary">
                 View Portfolio
               </Link>
             </div>
@@ -106,7 +91,7 @@ export function ServicesPage() {
                 {services.slice(0, 3).map((service) => (
                   <article key={service.slug} className="services-hero-mini-card">
                     <div className="services-hero-mini-media">
-                      <img src={service.image} alt={service.title} />
+                      <Image src={service.image} alt={service.title} width={420} height={320} />
                     </div>
                     <div className="services-hero-mini-copy">
                       <span>{service.shortTitle}</span>
@@ -167,19 +152,10 @@ export function ServicesPage() {
   );
 }
 
-export function ServiceDetailPage() {
-  const params = useParams();
-  const service = services.find((entry) => entry.slug === params.slug);
-
-  if (!service) {
-    return <NotFoundPage />;
-  }
-
-  const seo = serviceSeoPaths[`/services/${service.slug}`];
-
+export function ServiceDetailPage({ service }: { service: ServiceOffer }) {
   return (
     <>
-      <Seo {...seo} />
+      <ServiceSchema service={service} />
       <section className="section page-hero">
         <div className="container page-hero-inner">
           <h1>{service.title}</h1>
@@ -233,10 +209,10 @@ export function ServiceDetailPage() {
             </article>
           </div>
           <div className="inline-cta-row">
-            <Link to="/contact" className="button primary">
+            <Link href="/contact" className="button primary">
               {service.ctaLabel}
             </Link>
-            <Link to="/pricing" className="button secondary">
+            <Link href="/pricing" className="button secondary">
               View Packages
             </Link>
           </div>
@@ -247,10 +223,8 @@ export function ServiceDetailPage() {
 }
 
 export function PortfolioPage() {
-  const seo = useSeo();
   return (
     <>
-      <Seo {...seo} />
       <section className="section page-hero">
         <div className="container page-hero-inner">
           <h1>Our Portfolio</h1>
@@ -266,19 +240,9 @@ export function PortfolioPage() {
   );
 }
 
-export function PortfolioDetailPage() {
-  const params = useParams();
-  const item = portfolioItems.find((entry) => entry.slug === params.slug);
-
-  if (!item) {
-    return <NotFoundPage />;
-  }
-
-  const seo = portfolioSeoPaths[`/portfolio/${item.slug}`];
-
+export function PortfolioDetailPage({ item }: { item: PortfolioItem }) {
   return (
     <>
-      <Seo {...seo} />
       <section className="section page-hero">
         <div className="container page-hero-inner is-left">
           <span className="eyebrow">{item.category}</span>
@@ -291,7 +255,7 @@ export function PortfolioDetailPage() {
           <div className="portfolio-detail-grid">
             <div className="portfolio-detail-media">
               {item.image ? (
-                <img src={item.image} alt={item.title} />
+                <Image src={item.image} alt={item.title} width={900} height={600} />
               ) : (
                 <div className="portfolio-placeholder">
                   <span>{item.category}</span>
@@ -339,10 +303,10 @@ export function PortfolioDetailPage() {
             </ul>
           </article>
           <div className="inline-cta-row">
-            <Link to="/contact" className="button primary">
+            <Link href="/contact" className="button primary">
               Discuss a Similar Project
             </Link>
-            <Link to="/portfolio" className="button secondary">
+            <Link href="/portfolio" className="button secondary">
               Back to Portfolio
             </Link>
           </div>
@@ -353,10 +317,8 @@ export function PortfolioDetailPage() {
 }
 
 export function AboutPage() {
-  const seo = useSeo();
   return (
     <>
-      <Seo {...seo} />
       <section className="section page-hero">
         <div className="container page-hero-inner">
           <h1>About WebNexus</h1>
@@ -419,10 +381,8 @@ export function AboutPage() {
 }
 
 export function PricingPage() {
-  const seo = useSeo();
   return (
     <>
-      <Seo {...seo} />
       <section className="section page-hero">
         <div className="container page-hero-inner">
           <h1>Pricing That Starts with Clarity</h1>
@@ -457,11 +417,8 @@ export function PricingPage() {
 }
 
 export function PrivacyPage() {
-  const seo = useSeo();
-
   return (
     <>
-      <Seo {...seo} />
       <section className="section page-hero">
         <div className="container page-hero-inner is-left">
           <span className="eyebrow">Policy</span>
@@ -498,11 +455,8 @@ export function PrivacyPage() {
 }
 
 export function TermsPage() {
-  const seo = useSeo();
-
   return (
     <>
-      <Seo {...seo} />
       <section className="section page-hero">
         <div className="container page-hero-inner is-left">
           <span className="eyebrow">Terms</span>
@@ -539,10 +493,8 @@ export function TermsPage() {
 }
 
 export function ContactPage() {
-  const seo = useSeo();
   return (
     <>
-      <Seo {...seo} />
       <section className="section page-hero is-contact">
         <div className="container page-hero-inner">
           <h1>Let&apos;s discuss your next move.</h1>
@@ -566,7 +518,7 @@ export function NotFoundPage() {
       <div className="container not-found">
         <h1>Page not found</h1>
         <p>The page you requested is not available.</p>
-        <Link to="/" className="button primary">
+        <Link href="/" className="button primary">
           Back to Home
         </Link>
       </div>

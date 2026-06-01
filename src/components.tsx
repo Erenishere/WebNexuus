@@ -1,6 +1,10 @@
-﻿import { ArrowRight, Check, ChevronRight, Cpu, Globe, Layers3, Menu, Smartphone, X } from 'lucide-react';
+﻿'use client';
+
+import { ArrowRight, Check, ChevronRight, Cpu, Globe, Layers3, Menu, Smartphone, X } from 'lucide-react';
 import { FormEvent, ReactNode, useMemo, useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {
   budgetRanges,
   navItems,
@@ -23,30 +27,31 @@ export function AppShell({ children }: { children: ReactNode }) {
 
 function Header() {
   const [open, setOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   const closeMenu = () => setOpen(false);
+  const isActive = (href: string) => (href === '/' ? pathname === href : pathname.startsWith(href));
 
   return (
     <header className="site-header">
       <div className="container header-row">
-        <Link to="/" className="brand-mark" onClick={closeMenu}>
+        <Link href="/" className="brand-mark" onClick={closeMenu}>
           <span className="brand-logo">W</span>
           <span>WebNexus</span>
         </Link>
         <nav className="nav-desktop" aria-label="Primary">
           {navItems.map((item) => (
-            <NavLink
+            <Link
               key={item.href}
-              className={({ isActive }) => `nav-link ${isActive ? 'is-active' : ''}`}
-              to={item.href}
+              className={`nav-link ${isActive(item.href) ? 'is-active' : ''}`}
+              href={item.href}
             >
               {item.label}
-            </NavLink>
+            </Link>
           ))}
         </nav>
         <div className="header-actions">
-          <Link to="/contact#project-form" className="button primary small">
+          <Link href="/contact#project-form" className="button primary small">
             Get Quote
           </Link>
           <button
@@ -64,16 +69,16 @@ function Header() {
         <div className="mobile-nav">
           <div className="container mobile-nav-panel">
             {navItems.map((item) => (
-              <NavLink
+              <Link
                 key={item.href}
-                to={item.href}
+                href={item.href}
                 onClick={closeMenu}
-                className={`mobile-nav-link ${location.pathname === item.href ? 'is-active' : ''}`}
+                className={`mobile-nav-link ${isActive(item.href) ? 'is-active' : ''}`}
               >
                 {item.label}
-              </NavLink>
+              </Link>
             ))}
-            <Link to="/contact#project-form" className="button primary block" onClick={closeMenu}>
+            <Link href="/contact#project-form" className="button primary block" onClick={closeMenu}>
               Get Quote
             </Link>
           </div>
@@ -100,7 +105,7 @@ export function Footer() {
           <h3 className="footer-title">Navigation</h3>
           <div className="footer-links">
             {navItems.map((item) => (
-              <Link key={item.href} to={item.href}>
+              <Link key={item.href} href={item.href}>
                 {item.label}
               </Link>
             ))}
@@ -109,19 +114,19 @@ export function Footer() {
         <div>
           <h3 className="footer-title">Core Services</h3>
           <div className="footer-links">
-            <Link to="/services/web-development">Web Development</Link>
-            <Link to="/services/mobile-app-development">Mobile Apps</Link>
-            <Link to="/services/custom-software-development">Custom Software</Link>
-            <Link to="/services/dashboard-development">Dashboards</Link>
+            <Link href="/services/web-development">Web Development</Link>
+            <Link href="/services/mobile-app-development">Mobile Apps</Link>
+            <Link href="/services/custom-software-development">Custom Software</Link>
+            <Link href="/services/dashboard-development">Dashboards</Link>
           </div>
         </div>
         <div>
           <h3 className="footer-title">Legal</h3>
           <div className="footer-links">
-            <Link to="/pricing">Pricing</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/privacy">Privacy Policy</Link>
-            <Link to="/terms">Terms of Use</Link>
+            <Link href="/pricing">Pricing</Link>
+            <Link href="/contact">Contact</Link>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Use</Link>
           </div>
         </div>
       </div>
@@ -160,19 +165,22 @@ export function HomeHero() {
             We design and develop custom websites, mobile apps, business systems, dashboards and AI-assisted software that help teams launch, operate and scale with more confidence.
           </p>
           <div className="hero-actions">
-            <Link to="/contact" className="button primary">
+            <Link href="/contact" className="button primary">
               Get Free Consultation
               <ArrowRight size={16} />
             </Link>
-            <Link to="/services" className="button secondary">
+            <Link href="/services" className="button secondary">
               View Our Services
             </Link>
           </div>
         </div>
         <div className="hero-media-card">
-          <img
+          <Image
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqK0jSSIo4KmFWTxfiklAQHzXKqTWx9SataCW7L6o6v3ibO1wL_NV2cHGzkFggUHdPtEq5RdD0OWWM7dE3az18wYObDxeqnSSH5T_jKG_5VUFGzzCwUDTo2IrldRxKd8saQccgpNM3NSbR01bzTkE3J69e-mEXs8gnjrqmPGJauk_0m2xo6zM9BpLBk5ppuK4bgli7904idwiGqe5rsYJNkY3TsYRJCO5lmoUJvwkq2hhSeWfZIT399wh4VnojkoWl_VIAdWJUcKQ"
             alt="WebNexus software development workspace"
+            width={900}
+            height={600}
+            priority
           />
         </div>
       </div>
@@ -199,7 +207,7 @@ export function ServicePreview({ services }: { services: ServiceOffer[] }) {
                 </span>
                 <h3>{service.shortTitle}</h3>
                 <p>{service.summary}</p>
-                <Link to={`/services/${service.slug}`} className="inline-link">
+                <Link href={`/services/${service.slug}`} className="inline-link">
                   Explore <ChevronRight size={14} />
                 </Link>
               </article>
@@ -306,7 +314,7 @@ export function CtaBand() {
           <span className="cta-mark">&loz;</span>
           <h2>Have an idea? Let&apos;s build it together.</h2>
           <p>Share your goals and we will map the right next step for your product, platform or internal system.</p>
-          <Link to="/contact" className="button text-link">
+          <Link href="/contact" className="button text-link">
             Start Your Project
           </Link>
         </div>
@@ -325,7 +333,7 @@ export function ServicesGrid({ services }: { services: ServiceOffer[] }) {
         >
           <div className="service-feature-media-wrap">
             <div className="service-feature-media">
-              <img src={service.image} alt={service.title} />
+              <Image src={service.image} alt={service.title} width={720} height={420} />
             </div>
             <span className="service-feature-media-badge">{service.shortTitle}</span>
             </div>
@@ -345,7 +353,7 @@ export function ServicesGrid({ services }: { services: ServiceOffer[] }) {
                   </span>
                 ))}
               </div>
-              <Link to={`/services/${service.slug}`} className="inline-link service-feature-link">
+              <Link href={`/services/${service.slug}`} className="inline-link service-feature-link">
                 View details
                 <ArrowRight size={16} />
               </Link>
@@ -364,7 +372,7 @@ export function PortfolioGrid({ items }: { items: PortfolioItem[] }) {
         <article key={item.slug} className="portfolio-card">
           <div className="portfolio-media">
             {item.image ? (
-              <img src={item.image} alt={item.title} />
+              <Image src={item.image} alt={item.title} width={720} height={500} />
             ) : (
               <div className="portfolio-placeholder">
                 <span>{item.category}</span>
@@ -390,7 +398,7 @@ export function PortfolioGrid({ items }: { items: PortfolioItem[] }) {
                 </li>
               ))}
             </ul>
-            <Link to={`/portfolio/${item.slug}`} className="button tertiary block">
+            <Link href={`/portfolio/${item.slug}`} className="button tertiary block">
               View Details
             </Link>
           </div>
@@ -418,7 +426,7 @@ export function PricingGrid({ tiers }: { tiers: PricingTier[] }) {
               </li>
             ))}
           </ul>
-          <Link to="/contact" className={`button ${index === 1 ? 'primary' : 'secondary'} block`}>
+          <Link href="/contact" className={`button ${index === 1 ? 'primary' : 'secondary'} block`}>
             Choose {tier.name}
           </Link>
         </article>

@@ -1,6 +1,6 @@
 import { LeadFormInput } from './types';
 
-const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
+const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
 export const contactEmail = 'webnexuus@gmail.com';
 
 function buildMailtoHref(payload: LeadFormInput) {

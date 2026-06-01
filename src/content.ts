@@ -11,7 +11,7 @@ import {
 export const siteConfig = {
   name: 'WebNexus',
   tagline: 'Custom web, mobile and AI-assisted software for ambitious teams',
-  siteUrl: import.meta.env.VITE_SITE_URL || 'https://www.webnexus.dev',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://application-tawny-two.vercel.app',
 };
 
 export const navItems: NavItem[] = [
