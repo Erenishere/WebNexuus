@@ -1,0 +1,26 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="36" fill="#07131A"/>
+  <rect x="60" y="60" width="1080" height="640" rx="32" fill="url(#paint0_radial)"/>
+  <rect x="198" y="124" width="804" height="512" rx="36" fill="#0E2430" stroke="#355764" stroke-width="4"/>
+  <circle cx="600" cy="380" r="128" fill="#102B38"/>
+  <path d="M600 292C645.287 292 682 328.713 682 374V396C682 441.287 645.287 478 600 478C554.713 478 518 441.287 518 396V374C518 328.713 554.713 292 600 292Z" fill="#143543"/>
+  <circle cx="566" cy="378" r="16" fill="#35D7F3"/>
+  <circle cx="634" cy="378" r="16" fill="#35D7F3"/>
+  <rect x="560" y="422" width="80" height="16" rx="8" fill="#6D8E9A"/>
+  <path d="M600 254V214" stroke="#35D7F3" stroke-width="12" stroke-linecap="round"/>
+  <path d="M600 546V506" stroke="#35D7F3" stroke-width="12" stroke-linecap="round"/>
+  <path d="M730 380H770" stroke="#35D7F3" stroke-width="12" stroke-linecap="round"/>
+  <path d="M430 380H470" stroke="#35D7F3" stroke-width="12" stroke-linecap="round"/>
+  <path d="M688 292L716 264" stroke="#35D7F3" stroke-width="12" stroke-linecap="round"/>
+  <path d="M484 496L512 468" stroke="#35D7F3" stroke-width="12" stroke-linecap="round"/>
+  <rect x="284" y="188" width="148" height="84" rx="22" fill="#143543"/>
+  <rect x="768" y="188" width="148" height="84" rx="22" fill="#143543"/>
+  <rect x="284" y="488" width="148" height="84" rx="22" fill="#143543"/>
+  <rect x="768" y="488" width="148" height="84" rx="22" fill="#143543"/>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 380) rotate(90) scale(350 520)">
+      <stop stop-color="#143D49"/>
+      <stop offset="1" stop-color="#050E14"/>
+    </radialGradient>
+  </defs>
+</svg>
